@@ -5,13 +5,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
+<title>JavaEE Tutorial</title>
 </head>
 <body>
 	<form action="" method="post">
-		<input type="text" name="firstname"></input>
-		<input type="text" name="lastname"></input>
-		<input type="submit" value="Submit"></input>
+		<table border="0">
+			<tr>
+				<td>
+					<input type="text" name="firstname"></input>
+				</td>	
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="lastname"></input>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="Submit"></input>
+				</td>
+			</tr>
+		</table>
 	</form>
 </body>
 </html>
