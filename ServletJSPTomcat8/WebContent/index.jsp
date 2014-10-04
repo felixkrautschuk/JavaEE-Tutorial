@@ -8,14 +8,20 @@
 <title>JavaEE Tutorial</title>
 </head>
 <body>
-	<form action="" method="post">
+	<form action="servletjsptomcat8" method="post">
 		<table border="0">
 			<tr>
+				<td>
+					Vorname:
+				</td>
 				<td>
 					<input type="text" name="firstname"></input>
 				</td>	
 			</tr>
 			<tr>
+				<td>
+					Nachname:
+				</td>
 				<td>
 					<input type="text" name="lastname"></input>
 				</td>

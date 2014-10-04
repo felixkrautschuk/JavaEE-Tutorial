@@ -14,7 +14,17 @@ public class ServletJSPTomcat8 extends HttpServlet
    
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
+		String firstname = null, lastname = null;
 		PrintWriter printWriter = response.getWriter();
-		printWriter.println("Tutorial");
+		firstname = request.getParameter("firstname");
+		lastname = request.getParameter("lastname");
+		if(firstname != null && lastname != null)
+		{
+			printWriter.println(firstname + " " + lastname);
+		}
+		else
+		{
+			printWriter.println("Leer");
+		}
 	}
 }
