@@ -12,8 +12,28 @@
 	<% 
 		String firstname = (String) request.getAttribute("firstname");
 		String lastname = (String) request.getAttribute("lastname");
-		
-		out.println(firstname + " " + lastname);
 	%>
+	
+	<table>
+		<tr>
+			<td>
+				Vorname:
+			</td>
+			
+			<td>
+				<%= firstname %>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Nachname:
+			</td>
+			
+			<td>
+				<%= lastname %>
+			</td>
+		</tr>
+	</table>
 </body>
 </html>
