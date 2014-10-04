@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,16 +14,20 @@ public class ServletJSPTomcat8 extends HttpServlet
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		String firstname = null, lastname = null;
-		PrintWriter printWriter = response.getWriter();
+		
 		firstname = request.getParameter("firstname");
 		lastname = request.getParameter("lastname");
-		if(firstname != null && lastname != null)
+		
+		//JSP-Page wird direkt geladen
+		if(firstname == null || lastname == null)
 		{
-			printWriter.println(firstname + " " + lastname);
+			getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+			return;
 		}
-		else
-		{
-			printWriter.println("Leer");
-		}
+		
+		
+		request.setAttribute("firstname", firstname);
+		request.setAttribute("lastname", lastname);
+		getServletContext().getRequestDispatcher("/output.jsp").forward(request, response);
 	}
 }
