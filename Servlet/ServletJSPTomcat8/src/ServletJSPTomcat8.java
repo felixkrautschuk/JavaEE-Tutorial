@@ -14,11 +14,18 @@ public class ServletJSPTomcat8 extends HttpServlet
      
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		PrintWriter printWriter = response.getWriter();
-		
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
 		
-		printWriter.println(firstname + " " + lastname);
+		if(firstname == null || lastname == null)
+		{
+			//damit index.jsp direkt geladen wird
+			getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+			return;
+		}
+		
+		request.setAttribute("firstname", firstname);
+		request.setAttribute("lastname", lastname);
+		getServletContext().getRequestDispatcher("/output.jsp").forward(request, response);
 	}
 }
